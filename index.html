@@ -5,34 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="sytles.css">
+    <link rel="stylesheet" href="mediaqueries.css">
     <script src="https://kit.fontawesome.com/f39b7b4e17.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="header">
-        <div class="container">
-            <nav>
-                <img src="IMAGES/LOGO.png" alt="logo">
-                <ul>
-                    <li><a href="#header">HOME</a></li>
-                    <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#services">SERVICES</a></li>
-                    <li><a href="#portfolio">PORTFOLIO</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                </ul>
-            </nav>
-
-            <div class="header-text">
-                <p>HI,</p>
-                <h1> I'm Collins Shem </h1>
-                <h1><span> WEB DEVELOPER</span></h1>
-            </div>
+    <nav id="desktop-nav">
+        <img src="IMAGES/LOGO.png" alt="logo">
         </div>
-        <div class="download-cv">
-            <a href="IMAGES/COLLINS SHEM MWENDA CURRICULUM VITAE.pdf" download class="download-button">Download CV</a>
+        <div>
+          
+          <ul class="nav-links">
+            <li><a href="#header">Header</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+            
+          </ul>
         </div>
-    </div>
+      </nav>
+      <nav id="hamburger-nav">
+        <div class="logo">
+            <img src="IMAGES/LOGO.png" alt="logo">
         </div>
-    </div>
+        <div class="hamburger-menu">
+          <div class="hamburger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="menu-links">
+            <li><a href="#header" onclick="toggleMenu()">Header</a></li>
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#services" onclick="toggleMenu()">Services</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          </div>
+        </div>
+      </nav>
+      <section id="profile">
+        <div class="section__pic-container">
+          <img src="IMAGES/HeroPic.png" alt="Collins Shem profile picture" />
+        </div>
+        <div class="section__text">
+          <p class="section__text__p1">Hello, I'm</p>
+          <h1 class="title">COLLINS SHEM MWENDA</h1>
+          <p class="section__text__p2">Web Developer</p>
+          <div class="btn-container">
+            <button
+              class="btn btn-color-2"
+              onclick="window.open('IMAGES/COLLINS SHEM MWENDA CURRICULUM VITAE.pdf')"
+            >
+              Download CV
+            </button>
+            <button class="btn btn-color-1" onclick="location.href='./#contact'">
+              Contact Info
+            </button>
+          </div>
+         
+        </div>
+      </section>
     <!-- ABOUT -->
 
 <div id="about">
@@ -44,7 +74,7 @@
             <div class="about-col-2">
                 <h1 class ="sub-title">About Me</h1>
                 <p>
-                    I am an accomplished, results-oriented ICT student with business experience in a computing environment and a self-made web developer proficient in HTML, CSS, and JavaScript. I possess basic knowledge of Java, MySQL, and Figma. I am currently seeking a new opportunity to develop and widen my work experience and skills, with the potential for growth. Driven to consistently contribute value through a strong work ethic and a continuous quest for new service skills, I am detail-oriented, organized, and a team player. Passionate about securing an entry-level job in ICT, I am ready to help achieve company goals and willing to take on added responsibilities to meet organizational objectives. I seek a full-time position that offers professional challenges utilizing my interpersonal, time management, and problem-solving skills.
+                    I am an accomplished, results-oriented ICT student with business experience in a computing environment and a self-made web developer good  at HTML, CSS,JavaScript and ReactJS. I possess basic knowledge of Java, MySQL, and Figma. I am currently seeking a new opportunity to develop and widen my work experience and skills, with the potential for growth. Driven to consistently contribute value through a strong work ethic and a continuous quest for new service skills, I am detail-oriented, organized, and a team player. Passionate about securing an entry-level job in ICT, I am ready to help achieve company goals and willing to take on added responsibilities to meet organizational objectives. I seek a full-time position that offers professional challenges utilizing my interpersonal, time management, and problem-solving skills.
                 </p>
                 <div class="tab-tittles">
                     <p class = "tab-links active-link" onclick="opentab('SKILLS')">SKILLS</p>
@@ -156,8 +186,8 @@
                 <p><i class="fa-solid fa-phone"></i>+254794804906</p>
                 <div class="social-icons">
                     <a href="https://intagram.com"><i class="fa-brands fa-square-instagram"></i></a>
-                    <a href=""><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://whatsapp.com"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://x.com"><i class="fa-brands fa-x-twitter"></i></a>
                 </div>
                 <a href="IMAGES/COLLINS SHEM MWENDA CURRICULUM VITAE.pdf" download class="btn btn2">Download CV</a>
             </div>
@@ -176,6 +206,16 @@
         <p>Copyright © Collins Shem. 2024<i class="fa-regular fa-heart"></i></p>
     </div>
 </div>
+
+<script>
+    function toggleMenu() {
+  const menu = document.querySelector(".menu-links");
+  const icon = document.querySelector(".hamburger-icon");
+  menu.classList.toggle("open");
+  icon.classList.toggle("open");
+}
+
+</script>
 
 <script>
 var tablinks = document.getElementsByClassName("tab-links");
